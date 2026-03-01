@@ -1961,6 +1961,7 @@ kbd {
         top: 100%;
         left: 0;
         right: 0;
+        transform: none;
         background: var(--white);
         flex-direction: column;
         padding: 24px;
