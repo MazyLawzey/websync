@@ -1,5 +1,24 @@
+// ===== Theme Toggle =====
+(function() {
+    const saved = localStorage.getItem('websync-theme');
+    if (saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+})();
+
 // ===== Scroll Animations (Intersection Observer) =====
 document.addEventListener('DOMContentLoaded', () => {
+
+    // ===== Dark Theme Toggle =====
+    const themeToggle = document.getElementById('themeToggle');
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('websync-theme', theme);
+    }
+    themeToggle.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+    });
     const animatedElements = document.querySelectorAll('[data-animate]');
 
     const observer = new IntersectionObserver((entries) => {
@@ -122,6 +141,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 heroVisual.style.transform = `translateY(${scrolled * 0.1}px)`;
             }
         }, { passive: true });
+    }
+
+    // ===== Hero Mouse Glow Effect =====
+    const heroSection = document.querySelector('.hero');
+    const heroMouseGlow = document.getElementById('heroMouseGlow');
+    if (heroSection && heroMouseGlow) {
+        let rafId = null;
+        let mouseX = 0;
+        let mouseY = 0;
+        let currentX = 0;
+        let currentY = 0;
+
+        heroSection.addEventListener('mousemove', (e) => {
+            const rect = heroSection.getBoundingClientRect();
+            mouseX = e.clientX - rect.left;
+            mouseY = e.clientY - rect.top;
+
+            if (!rafId) {
+                rafId = requestAnimationFrame(updateGlow);
+            }
+        });
+
+        function updateGlow() {
+            currentX += (mouseX - currentX) * 0.15;
+            currentY += (mouseY - currentY) * 0.15;
+
+            heroMouseGlow.style.left = currentX + 'px';
+            heroMouseGlow.style.top = currentY + 'px';
+
+            if (Math.abs(mouseX - currentX) > 0.5 || Math.abs(mouseY - currentY) > 0.5) {
+                rafId = requestAnimationFrame(updateGlow);
+            } else {
+                rafId = null;
+            }
+        }
     }
 
     // ===== Active Nav Link Highlight =====
