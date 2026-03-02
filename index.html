@@ -15,6 +15,14 @@
     <link rel="icon" href="logo.png" type="image/x-icon">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
@@ -25,12 +33,15 @@
                 <span>WebSync <span class="logo-accent">Live</span></span>
             </a>
             <div class="nav-links" id="navLinks">
-                <a href="#features">Features</a>
-                <a href="#how-it-works">How It Works</a>
-                <a href="#roles">Roles</a>
-                <a href="#start">Get Started</a>
-                <a href="#roadmap">Roadmap</a>
+                <a href="#features" data-i18n="nav.features">Features</a>
+                <a href="#how-it-works" data-i18n="nav.howItWorks">How It Works</a>
+                <a href="#roles" data-i18n="nav.roles">Roles</a>
+                <a href="#start" data-i18n="nav.getStarted">Get Started</a>
+                <a href="#roadmap" data-i18n="nav.roadmap">Roadmap</a>
             </div>
+            <button class="lang-toggle" id="langToggle" aria-label="Switch language" title="Switch language">
+                <span class="lang-label">RU</span>
+            </button>
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark theme" title="Toggle theme">
                 <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
                 <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -41,7 +52,7 @@
             </a>
             <a href="https://marketplace.visualstudio.com/items?itemName=MazyLawzey.websync-live" target="_blank" class="nav-cta">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Install
+                <span data-i18n="nav.install">Install</span>
             </a>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
@@ -55,28 +66,38 @@
             <div class="hero-grid"></div>
             <div class="hero-glow"></div>
             <div class="hero-mouse-glow" id="heroMouseGlow"></div>
+            <div class="hero-particles">
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+            </div>
         </div>
         <div class="container hero-container">
             <div class="hero-badge" data-animate="fade-up">
                 <span class="badge-dot"></span>
-                VS Code Extension for Education
+                <span data-i18n="hero.badge">VS Code Extension for Education</span>
             </div>
             <h1 class="hero-title" data-animate="fade-up" data-delay="100">
-                Real-Time Collaborative<br>
-                <span class="gradient-text">Web Development</span>
+                <span data-i18n="hero.title1">Real-Time Collaborative</span><br>
+                <span class="gradient-text" data-i18n="hero.title2">Web Development</span>
             </h1>
-            <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
+            <p class="hero-subtitle" data-animate="fade-up" data-delay="200" data-i18n="hero.subtitle">
                 A teacher opens a session, students join and see code, preview, and cursor 
                 positions in real time — like CodeTogether + Live Server + Figma, all inside VS Code.
             </p>
             <div class="hero-actions" data-animate="fade-up" data-delay="300">
                 <a href="https://marketplace.visualstudio.com/items?itemName=MazyLawzey.websync-live" target="_blank" class="btn btn-primary btn-lg">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    Install from Marketplace
+                    <span data-i18n="hero.installBtn">Install from Marketplace</span>
                 </a>
                 <a href="https://github.com/MazyLawzey/websync-live" target="_blank" class="btn btn-outline btn-lg">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    View on GitHub
+                    <span data-i18n="hero.githubBtn">View on GitHub</span>
                 </a>
             </div>
             <div class="hero-visual" data-animate="fade-up" data-delay="400">
@@ -167,73 +188,97 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-header" data-animate="fade-up">
-                <span class="section-label">Features</span>
-                <h2 class="section-title">Everything you need for<br><span class="gradient-text">collaborative teaching</span></h2>
-                <p class="section-desc">A complete toolkit for real-time code sharing, collaboration, and live preview — all without leaving VS Code.</p>
+                <span class="section-label" data-i18n="features.label">Features</span>
+                <h2 class="section-title"><span data-i18n="features.title1">Everything you need for</span><br><span class="gradient-text" data-i18n="features.title2">collaborative teaching</span></h2>
+                <p class="section-desc" data-i18n="features.desc">A complete toolkit for real-time code sharing, collaboration, and live preview — all without leaving VS Code.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card feature-card-lg" data-animate="fade-up">
                     <div class="feature-icon icon-red">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
                     </div>
-                    <h3>Live Session</h3>
-                    <p>Host creates a session with a unique code. Students join instantly — no setup, no accounts, just a code and a URL.</p>
+                    <h3 data-i18n="features.liveSession">Live Session</h3>
+                    <p data-i18n="features.liveSessionDesc">Host creates a session with a unique code. Students join instantly — no setup, no accounts, just a code and a URL.</p>
                 </div>
                 <div class="feature-card" data-animate="fade-up" data-delay="50">
                     <div class="feature-icon icon-blue">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
                     </div>
-                    <h3>File Sync</h3>
-                    <p>All workspace files synced from host to students instantly.</p>
+                    <h3 data-i18n="features.fileSync">File Sync</h3>
+                    <p data-i18n="features.fileSyncDesc">All workspace files synced from host to students instantly.</p>
                 </div>
                 <div class="feature-card" data-animate="fade-up" data-delay="100">
                     <div class="feature-icon icon-green">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
                     </div>
-                    <h3>Incremental Edits</h3>
-                    <p>Only changed ranges are sent — no cursor jumps, no lag.</p>
+                    <h3 data-i18n="features.incrementalEdits">Incremental Edits</h3>
+                    <p data-i18n="features.incrementalEditsDesc">Only changed ranges are sent — no cursor jumps, no lag.</p>
                 </div>
                 <div class="feature-card" data-animate="fade-up" data-delay="50">
                     <div class="feature-icon icon-purple">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                     </div>
-                    <h3>Navigation Sync</h3>
-                    <p>Host switches file — students' editors follow automatically.</p>
+                    <h3 data-i18n="features.navSync">Navigation Sync</h3>
+                    <p data-i18n="features.navSyncDesc">Host switches file — students' editors follow automatically.</p>
                 </div>
                 <div class="feature-card" data-animate="fade-up" data-delay="100">
                     <div class="feature-icon icon-yellow">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
-                    <h3>Collaborative Cursors</h3>
-                    <p>Figma-style colored cursors with names for all participants.</p>
+                    <h3 data-i18n="features.cursors">Collaborative Cursors</h3>
+                    <p data-i18n="features.cursorsDesc">Figma-style colored cursors with names for all participants.</p>
                 </div>
                 <div class="feature-card" data-animate="fade-up" data-delay="150">
                     <div class="feature-icon icon-pink">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                     </div>
-                    <h3>Code Comments</h3>
-                    <p>Add inline comments on any line, visible to everyone.</p>
+                    <h3 data-i18n="features.comments">Code Comments</h3>
+                    <p data-i18n="features.commentsDesc">Add inline comments on any line, visible to everyone.</p>
                 </div>
                 <div class="feature-card feature-card-lg" data-animate="fade-up" data-delay="50">
                     <div class="feature-icon icon-cyan">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                     </div>
-                    <h3>Live Preview</h3>
-                    <p>Built-in iframe preview with live reload on every save. See your HTML, CSS, and JavaScript changes reflected instantly without switching windows.</p>
+                    <h3 data-i18n="features.livePreview">Live Preview</h3>
+                    <p data-i18n="features.livePreviewDesc">Built-in iframe preview with live reload on every save. See your HTML, CSS, and JavaScript changes reflected instantly without switching windows.</p>
                 </div>
                 <div class="feature-card" data-animate="fade-up" data-delay="100">
                     <div class="feature-icon icon-orange">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                     </div>
-                    <h3>Role System</h3>
-                    <p>Host, Admin, Editor, Viewer — each with specific permissions.</p>
+                    <h3 data-i18n="features.roleSystem">Role System</h3>
+                    <p data-i18n="features.roleSystemDesc">Host, Admin, Editor, Viewer — each with specific permissions.</p>
                 </div>
                 <div class="feature-card" data-animate="fade-up" data-delay="150">
                     <div class="feature-icon icon-teal">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                     </div>
-                    <h3>ngrok Tunnel</h3>
-                    <p>Share sessions over the internet with one click.</p>
+                    <h3 data-i18n="features.ngrok">ngrok Tunnel</h3>
+                    <p data-i18n="features.ngrokDesc">Share sessions over the internet with one click.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counter -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid" data-animate="fade-up">
+                <div class="stat-card">
+                    <div class="stat-number" data-count="9">0</div>
+                    <div class="stat-label" data-i18n="stats.features">Core Features</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="4">0</div>
+                    <div class="stat-label" data-i18n="stats.roles">Permission Roles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="1728" data-suffix="+">0</div>
+                    <div class="stat-label" data-i18n="stats.lines">Lines of Code</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="100" data-suffix="%">0</div>
+                    <div class="stat-label" data-i18n="stats.opensource">Open Source</div>
                 </div>
             </div>
         </div>
@@ -243,8 +288,8 @@
     <section class="how-it-works" id="how-it-works">
         <div class="container">
             <div class="section-header" data-animate="fade-up">
-                <span class="section-label">How It Works</span>
-                <h2 class="section-title">Simple setup,<br><span class="gradient-text">powerful collaboration</span></h2>
+                <span class="section-label" data-i18n="howItWorks.label">How It Works</span>
+                <h2 class="section-title"><span data-i18n="howItWorks.title1">Simple setup,</span><br><span class="gradient-text" data-i18n="howItWorks.title2">powerful collaboration</span></h2>
             </div>
             <div class="steps-grid">
                 <div class="step-card" data-animate="fade-up">
@@ -252,8 +297,8 @@
                     <div class="step-icon">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 12 15 16 10"/></svg>
                     </div>
-                    <h3>Create Session</h3>
-                    <p>Teacher enters a display name and clicks <strong>Create Session</strong>. The server starts automatically on localhost:3000 and generates a unique session code.</p>
+                    <h3 data-i18n="howItWorks.step1Title">Create Session</h3>
+                    <p data-i18n="howItWorks.step1Desc">Teacher enters a display name and clicks <strong>Create Session</strong>. The server starts automatically on localhost:3000 and generates a unique session code.</p>
                 </div>
                 <div class="step-connector" data-animate="fade-up">
                     <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -263,8 +308,8 @@
                     <div class="step-icon">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
                     </div>
-                    <h3>Students Join</h3>
-                    <p>Students enter the session code and server URL, click <strong>Join Session</strong>. All workspace files are synced automatically — no setup needed.</p>
+                    <h3 data-i18n="howItWorks.step2Title">Students Join</h3>
+                    <p data-i18n="howItWorks.step2Desc">Students enter the session code and server URL, click <strong>Join Session</strong>. All workspace files are synced automatically — no setup needed.</p>
                 </div>
                 <div class="step-connector" data-animate="fade-up">
                     <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -274,14 +319,14 @@
                     <div class="step-icon">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
                     </div>
-                    <h3>Code Together</h3>
-                    <p>Every keystroke, cursor move, and file switch is synced in real time. The built-in live preview shows the rendered page instantly.</p>
+                    <h3 data-i18n="howItWorks.step3Title">Code Together</h3>
+                    <p data-i18n="howItWorks.step3Desc">Every keystroke, cursor move, and file switch is synced in real time. The built-in live preview shows the rendered page instantly.</p>
                 </div>
             </div>
 
             <!-- Architecture Diagram -->
             <div class="architecture-block" data-animate="fade-up">
-                <h3 class="arch-title">Architecture</h3>
+                <h3 class="arch-title" data-i18n="howItWorks.architecture">Architecture</h3>
                 <div class="arch-diagram">
                     <div class="arch-node arch-main">
                         <div class="arch-node-icon">
@@ -344,61 +389,61 @@
     <section class="roles" id="roles">
         <div class="container">
             <div class="section-header" data-animate="fade-up">
-                <span class="section-label">Permissions</span>
-                <h2 class="section-title">Fine-grained<br><span class="gradient-text">role system</span></h2>
-                <p class="section-desc">Control who can edit, comment, manage roles, and kick users. All permissions enforced server-side.</p>
+                <span class="section-label" data-i18n="roles.label">Permissions</span>
+                <h2 class="section-title"><span data-i18n="roles.title1">Fine-grained</span><br><span class="gradient-text" data-i18n="roles.title2">role system</span></h2>
+                <p class="section-desc" data-i18n="roles.desc">Control who can edit, comment, manage roles, and kick users. All permissions enforced server-side.</p>
             </div>
             <div class="roles-grid">
                 <div class="role-card role-host" data-animate="fade-up">
                     <div class="role-header">
                         <div class="role-badge host">HOST</div>
-                        <h3>Host</h3>
+                        <h3 data-i18n="roles.host">Host</h3>
                     </div>
-                    <p class="role-desc">Session creator with full control.</p>
+                    <p class="role-desc" data-i18n="roles.hostDesc">Session creator with full control.</p>
                     <ul class="role-perms">
-                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Edit Files</li>
-                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Add Comments</li>
-                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Change Roles</li>
-                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Kick Users</li>
+                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="roles.editFiles">Edit Files</span></li>
+                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="roles.addComments">Add Comments</span></li>
+                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="roles.changeRoles">Change Roles</span></li>
+                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="roles.kickUsers">Kick Users</span></li>
                     </ul>
                 </div>
                 <div class="role-card role-admin" data-animate="fade-up" data-delay="100">
                     <div class="role-header">
                         <div class="role-badge admin">ADMIN</div>
-                        <h3>Admin</h3>
+                        <h3 data-i18n="roles.admin">Admin</h3>
                     </div>
-                    <p class="role-desc">Trusted assistant with elevated permissions.</p>
+                    <p class="role-desc" data-i18n="roles.adminDesc">Trusted assistant with elevated permissions.</p>
                     <ul class="role-perms">
-                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Edit Files</li>
-                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Add Comments</li>
-                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Change Roles <span class="perm-note">(editors/viewers)</span></li>
-                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Kick Users</li>
+                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="roles.editFiles">Edit Files</span></li>
+                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="roles.addComments">Add Comments</span></li>
+                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="roles.changeRolesNote">Change Roles</span> <span class="perm-note" data-i18n="roles.editorsViewers">(editors/viewers)</span></li>
+                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="roles.kickUsers">Kick Users</span></li>
                     </ul>
                 </div>
                 <div class="role-card role-editor" data-animate="fade-up" data-delay="200">
                     <div class="role-header">
                         <div class="role-badge editor-b">EDITOR</div>
-                        <h3>Editor</h3>
+                        <h3 data-i18n="roles.editor">Editor</h3>
                     </div>
-                    <p class="role-desc">Can contribute code and comments.</p>
+                    <p class="role-desc" data-i18n="roles.editorDesc">Can contribute code and comments.</p>
                     <ul class="role-perms">
-                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Edit Files</li>
-                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Add Comments</li>
-                        <li class="perm-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Change Roles</li>
-                        <li class="perm-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Kick Users</li>
+                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="roles.editFiles">Edit Files</span></li>
+                        <li class="perm-yes"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> <span data-i18n="roles.addComments">Add Comments</span></li>
+                        <li class="perm-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> <span data-i18n="roles.changeRoles">Change Roles</span></li>
+                        <li class="perm-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> <span data-i18n="roles.kickUsers">Kick Users</span></li>
                     </ul>
                 </div>
                 <div class="role-card role-viewer" data-animate="fade-up" data-delay="300">
                     <div class="role-header">
                         <div class="role-badge viewer-b">VIEWER</div>
-                        <h3>Viewer</h3>
+                        <h3 data-i18n="roles.viewer">Viewer</h3>
                     </div>
-                    <p class="role-desc">Read-only access for observation.</p>
+                    <p class="role-desc" data-i18n="roles.viewerDesc">Read-only access for observation.</p>
                     <ul class="role-perms">
-                        <li class="perm-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Edit Files</li>
-                        <li class="perm-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Add Comments</li>
-                        <li class="perm-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Change Roles</li>
-                        <li class="perm-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Kick Users</li>
+                        <li class="perm-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> <span data-i18n="roles.editFiles">Edit Files</span></li>
+                        <li class="perm-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> <span data-i18n="roles.addComments">Add Comments</span></li>
+                        <li class="perm-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> <span data-i18n="roles.changeRoles">Change Roles</span></li>
+                        <li class="perm-no"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> <span data-i18n="roles.kickUsers">Kick Users</span></li>
                     </ul>
                 </div>
             </div>
@@ -409,18 +454,18 @@
     <section class="get-started" id="start">
         <div class="container">
             <div class="section-header" data-animate="fade-up">
-                <span class="section-label">Quick Start</span>
-                <h2 class="section-title">Up and running<br><span class="gradient-text">in 3 minutes</span></h2>
+                <span class="section-label" data-i18n="start.label">Quick Start</span>
+                <h2 class="section-title"><span data-i18n="start.title1">Up and running</span><br><span class="gradient-text" data-i18n="start.title2">in 3 minutes</span></h2>
             </div>
             <div class="start-steps" data-animate="fade-up">
                 <div class="start-step">
                     <div class="start-step-num">1</div>
                     <div class="start-step-content">
-                        <h3>Install from VS Code Marketplace</h3>
-                        <p>Search for <strong>"WebSync Live"</strong> in the Extensions tab, or install directly:</p>
+                        <h3 data-i18n="start.step1Title">Install from VS Code Marketplace</h3>
+                        <p><span data-i18n="start.step1Desc">Search for</span> <strong>"WebSync Live"</strong> <span data-i18n="start.step1Desc2">in the Extensions tab, or install directly:</span></p>
                         <a href="https://marketplace.visualstudio.com/items?itemName=MazyLawzey.websync-live" target="_blank" class="btn btn-primary btn-sm" style="margin-top:12px;">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                            Open in Marketplace
+                            <span data-i18n="start.openMarketplace">Open in Marketplace</span>
                         </a>
                         <div class="code-block" style="margin-top:12px;">
                             <code>ext install MazyLawzey.websync-live</code>
@@ -433,15 +478,15 @@
                 <div class="start-step">
                     <div class="start-step-num">2</div>
                     <div class="start-step-content">
-                        <h3>Open the Sidebar</h3>
-                        <p>Click the <strong>WebSync Live</strong> icon in the Activity Bar (left side of VS Code).</p>
+                        <h3 data-i18n="start.step2Title">Open the Sidebar</h3>
+                        <p><span data-i18n="start.step2Desc">Click the</span> <strong>WebSync Live</strong> <span data-i18n="start.step2Desc2">icon in the Activity Bar (left side of VS Code).</span></p>
                     </div>
                 </div>
                 <div class="start-step">
                     <div class="start-step-num">3</div>
                     <div class="start-step-content">
-                        <h3>Create or Join a Session</h3>
-                        <p>Enter your display name, click <strong>Create Session</strong> to host, or enter a session code to <strong>Join</strong>. That's it!</p>
+                        <h3 data-i18n="start.step3Title">Create or Join a Session</h3>
+                        <p><span data-i18n="start.step3Desc">Enter your display name, click</span> <strong data-i18n="start.createSession">Create Session</strong> <span data-i18n="start.step3Desc2">to host, or enter a session code to</span> <strong data-i18n="start.join">Join</strong>. <span data-i18n="start.thatsIt">That's it!</span></p>
                     </div>
                 </div>
             </div>
@@ -452,8 +497,8 @@
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                 </div>
                 <div class="ngrok-info">
-                    <h3>Share Over the Internet</h3>
-                    <p>Behind a NAT or firewall? Use ngrok to share your session globally. Get a free auth token, click <strong>Share</strong>, and paste it. Students get a public URL to join from anywhere.</p>
+                    <h3 data-i18n="start.ngrokTitle">Share Over the Internet</h3>
+                    <p data-i18n="start.ngrokDesc">Behind a NAT or firewall? Use ngrok to share your session globally. Get a free auth token, click <strong>Share</strong>, and paste it. Students get a public URL to join from anywhere.</p>
                 </div>
             </div>
         </div>
@@ -463,9 +508,9 @@
     <section class="roadmap" id="roadmap">
         <div class="container">
             <div class="section-header" data-animate="fade-up">
-                <span class="section-label">Roadmap</span>
-                <h2 class="section-title">Where we're<br><span class="gradient-text">headed next</span></h2>
-                <p class="section-desc">We're just getting started. WebSync Live will keep evolving — and our growth depends entirely on you, our users.</p>
+                <span class="section-label" data-i18n="roadmap.label">Roadmap</span>
+                <h2 class="section-title"><span data-i18n="roadmap.title1">Where we're</span><br><span class="gradient-text" data-i18n="roadmap.title2">headed next</span></h2>
+                <p class="section-desc" data-i18n="roadmap.desc">We're just getting started. WebSync Live will keep evolving — and our growth depends entirely on you, our users.</p>
             </div>
 
             <div class="roadmap-timeline" data-animate="fade-up">
@@ -476,9 +521,9 @@
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
                     <div class="roadmap-card">
-                        <span class="roadmap-tag tag-done">Done</span>
-                        <h3>Public Release</h3>
-                        <p>Extension published on VS Code Marketplace — free and open source for everyone.</p>
+                        <span class="roadmap-tag tag-done" data-i18n="roadmap.done">Done</span>
+                        <h3 data-i18n="roadmap.publicRelease">Public Release</h3>
+                        <p data-i18n="roadmap.publicReleaseDesc">Extension published on VS Code Marketplace — free and open source for everyone.</p>
                     </div>
                 </div>
 
@@ -487,9 +532,9 @@
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
                     <div class="roadmap-card">
-                        <span class="roadmap-tag tag-done">Done</span>
-                        <h3>Real-time Collaborative Cursors</h3>
-                        <p>Figma-style colored cursors with names, selection highlighting, and live position tracking.</p>
+                        <span class="roadmap-tag tag-done" data-i18n="roadmap.done">Done</span>
+                        <h3 data-i18n="roadmap.cursors">Real-time Collaborative Cursors</h3>
+                        <p data-i18n="roadmap.cursorsDesc">Figma-style colored cursors with names, selection highlighting, and live position tracking.</p>
                     </div>
                 </div>
 
@@ -498,36 +543,45 @@
                         <div class="dot-pulse"></div>
                     </div>
                     <div class="roadmap-card">
-                        <span class="roadmap-tag tag-active">In Progress</span>
-                        <h3>Cloud Servers</h3>
-                        <p>Our own managed servers so you don't need to self-host. Create a session, get a link — students join from anywhere without ngrok or port forwarding.</p>
+                        <span class="roadmap-tag tag-active" data-i18n="roadmap.inProgress">In Progress</span>
+                        <h3 data-i18n="roadmap.cloud">Cloud Servers</h3>
+                        <p data-i18n="roadmap.cloudDesc">Our own managed servers so you don't need to self-host. Create a session, get a link — students join from anywhere without ngrok or port forwarding.</p>
                     </div>
                 </div>
 
                 <div class="roadmap-item upcoming">
                     <div class="roadmap-dot"></div>
                     <div class="roadmap-card">
-                        <span class="roadmap-tag tag-upcoming">Planned</span>
-                        <h3>Persistent Sessions</h3>
-                        <p>Save and restore session state — reconnect without losing progress, even after VS Code restarts.</p>
+                        <span class="roadmap-tag tag-upcoming" data-i18n="roadmap.planned">Planned</span>
+                        <h3 data-i18n="roadmap.persistent">Persistent Sessions</h3>
+                        <p data-i18n="roadmap.persistentDesc">Save and restore session state — reconnect without losing progress, even after VS Code restarts.</p>
                     </div>
                 </div>
 
                 <div class="roadmap-item upcoming">
                     <div class="roadmap-dot"></div>
                     <div class="roadmap-card">
-                        <span class="roadmap-tag tag-upcoming">Planned</span>
-                        <h3>Built-in Chat & Voice</h3>
-                        <p>Communicate with your students directly inside VS Code — no need for external apps.</p>
+                        <span class="roadmap-tag tag-upcoming" data-i18n="roadmap.planned">Planned</span>
+                        <h3 data-i18n="roadmap.localization">Localization</h3>
+                        <p data-i18n="roadmap.localizationDesc">Full multi-language support for the extension UI — starting with English and Russian, with more languages to follow based on community demand.</p>
                     </div>
                 </div>
 
                 <div class="roadmap-item upcoming">
                     <div class="roadmap-dot"></div>
                     <div class="roadmap-card">
-                        <span class="roadmap-tag tag-upcoming">Planned</span>
-                        <h3>End-to-End Encryption</h3>
-                        <p>JWT auth, encrypted WebSocket channels, and secure session management for production use.</p>
+                        <span class="roadmap-tag tag-upcoming" data-i18n="roadmap.planned">Planned</span>
+                        <h3 data-i18n="roadmap.chat">Built-in Chat & Voice</h3>
+                        <p data-i18n="roadmap.chatDesc">Communicate with your students directly inside VS Code — no need for external apps.</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-item upcoming">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-card">
+                        <span class="roadmap-tag tag-upcoming" data-i18n="roadmap.planned">Planned</span>
+                        <h3 data-i18n="roadmap.encryption">End-to-End Encryption</h3>
+                        <p data-i18n="roadmap.encryptionDesc">JWT auth, encrypted WebSocket channels, and secure session management for production use.</p>
                     </div>
                 </div>
             </div>
@@ -538,16 +592,16 @@
                     <div class="community-icon">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                     </div>
-                    <h3>Our growth depends on you</h3>
-                    <p>WebSync Live is built by a tiny team with a big vision. Every install, every star, every session created — it all matters. The more people use it, the faster we can develop new features, set up cloud infrastructure, and make collaborative coding accessible for every classroom in the world.</p>
+                    <h3 data-i18n="roadmap.communityTitle">Our growth depends on you</h3>
+                    <p data-i18n="roadmap.communityDesc">WebSync Live is built by a tiny team with a big vision. Every install, every star, every session created — it all matters. The more people use it, the faster we can develop new features, set up cloud infrastructure, and make collaborative coding accessible for every classroom in the world.</p>
                     <div class="community-actions">
                         <a href="https://marketplace.visualstudio.com/items?itemName=MazyLawzey.websync-live" target="_blank" class="btn btn-primary btn-sm">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                            Install Extension
+                            <span data-i18n="roadmap.installBtn">Install Extension</span>
                         </a>
                         <a href="https://github.com/MazyLawzey/websync-live" target="_blank" class="btn btn-outline btn-sm">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            Star on GitHub
+                            <span data-i18n="roadmap.starBtn">Star on GitHub</span>
                         </a>
                     </div>
                 </div>
@@ -559,16 +613,16 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-block" data-animate="fade-up">
-                <h2>Ready to transform your<br><span class="gradient-text">classroom experience?</span></h2>
-                <p>Start using WebSync Live today — free, open source, and built for educators.</p>
+                <h2><span data-i18n="cta.title1">Ready to transform your</span><br><span class="gradient-text" data-i18n="cta.title2">classroom experience?</span></h2>
+                <p data-i18n="cta.desc">Start using WebSync Live today — free, open source, and built for educators.</p>
                 <div class="cta-actions">
                     <a href="https://marketplace.visualstudio.com/items?itemName=MazyLawzey.websync-live" target="_blank" class="btn btn-primary btn-lg">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Install from Marketplace
+                        <span data-i18n="cta.installBtn">Install from Marketplace</span>
                     </a>
                     <a href="https://github.com/MazyLawzey/websync-live" target="_blank" class="btn btn-white btn-lg">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        View on GitHub
+                        <span data-i18n="cta.githubBtn">View on GitHub</span>
                     </a>
                 </div>
             </div>
@@ -586,37 +640,37 @@
                         </div>
                         <span>WebSync <span class="logo-accent">Live</span></span>
                     </a>
-                    <p class="footer-desc">Real-time collaborative web development for education, built inside VS Code.</p>
+                    <p class="footer-desc" data-i18n="footer.desc">Real-time collaborative web development for education, built inside VS Code.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-col">
-                        <h4>Product</h4>
-                        <a href="#features">Features</a>
-                        <a href="#how-it-works">How It Works</a>
-                        <a href="#roles">Roles</a>
-                        <a href="#roadmap">Roadmap</a>
+                        <h4 data-i18n="footer.product">Product</h4>
+                        <a href="#features" data-i18n="nav.features">Features</a>
+                        <a href="#how-it-works" data-i18n="nav.howItWorks">How It Works</a>
+                        <a href="#roles" data-i18n="nav.roles">Roles</a>
+                        <a href="#roadmap" data-i18n="nav.roadmap">Roadmap</a>
                     </div>
                     <div class="footer-col">
-                        <h4>Resources</h4>
+                        <h4 data-i18n="footer.resources">Resources</h4>
                         <a href="https://marketplace.visualstudio.com/items?itemName=MazyLawzey.websync-live" target="_blank">VS Code Marketplace</a>
                         <a href="https://github.com/MazyLawzey/websync-live" target="_blank">GitHub</a>
                         <a href="https://github.com/MazyLawzey/websync-live/releases" target="_blank">Releases</a>
                         <a href="https://github.com/MazyLawzey/websync-live/blob/main/LICENSE" target="_blank">License (GPL-3.0)</a>
                     </div>
                     <div class="footer-col">
-                        <h4>Authors</h4>
+                        <h4 data-i18n="footer.authors">Authors</h4>
                         <a href="https://github.com/MazyLawzey" target="_blank">MazyLawzey</a>
                         <a href="https://github.com/rionn11" target="_blank">rionn11</a>
                     </div>
                     <div class="footer-col">
-                        <h4>Contacts</h4>
+                        <h4 data-i18n="footer.contacts">Contacts</h4>
                         <a href="mailto:iam@mazylawzey.ru">iam@mazylawzey.ru</a>
                         <a href="https://t.me/mazylawzey" target="_blank">Telegram</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 WebSync Live. Open source under GPL-3.0.</p>
+                <p data-i18n="footer.copyright">&copy; 2026 WebSync Live. Open source under GPL-3.0.</p>
             </div>
         </div>
     </footer>
