@@ -2245,6 +2245,12 @@ body {
 
     .nav-toggle {
         display: flex;
+        order: 10;
+    }
+
+    .nav-container {
+        gap: 10px;
+        flex-wrap: nowrap;
     }
 
     .nav-cta-secondary {
@@ -2252,8 +2258,14 @@ body {
     }
 
     .nav-cta {
-        font-size: 0.8rem;
-        padding: 7px 14px;
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+
+    .lang-toggle,
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
     }
 
     .hero {
@@ -2364,6 +2376,40 @@ body {
 @media (max-width: 480px) {
     .container {
         padding: 0 16px;
+    }
+
+    .nav-container {
+        gap: 8px;
+    }
+
+    .nav-logo span {
+        font-size: 1rem;
+    }
+
+    .nav-cta {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+        gap: 4px;
+    }
+
+    .nav-cta svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .lang-toggle,
+    .theme-toggle {
+        width: 32px;
+        height: 32px;
+    }
+
+    .lang-toggle .lang-label {
+        font-size: 0.6rem;
+    }
+
+    .theme-toggle svg {
+        width: 15px;
+        height: 15px;
     }
 
     .section-title {
